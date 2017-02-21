@@ -18,6 +18,14 @@ class School
     @rooms = []
   end
 
+  def start
+  end
+
+  def display_current_location
+  end
+
+
+
   attr_accessor :player
 end
 
@@ -63,5 +71,5 @@ class Question
 end
 
 def user_dies()
-  #system('say "oh no you are deeeeeeead."')
+  system('say "you are deeeeeeead"')
 end
