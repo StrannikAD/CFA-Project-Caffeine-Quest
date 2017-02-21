@@ -26,6 +26,7 @@ class Room
     @name = name
     @description = description
     @task = task
+    @question = question
   end
 
   attr_accessor :name, :description, :task
@@ -37,8 +38,8 @@ class Room
 end
 
 class Question
-  def initialize(question, multiple_choice, correct)
-    @question = question
+  def initialize(question_text, multiple_choice, correct)
+    @question_text = question_text
     @user_answer = ""
     @multiple_choice = multiple_choice
     @correct = correct
