@@ -23,9 +23,7 @@ class School
 
   def display_current_location
   end
-
-
-
+  
   attr_accessor :player
 end
 
@@ -35,6 +33,7 @@ class Room
     @description = description
     @task = task
     @question = question
+    @next_location = next_location
   end
 
   attr_accessor :name, :description, :task
