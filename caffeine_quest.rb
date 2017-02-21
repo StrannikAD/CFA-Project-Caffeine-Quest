@@ -4,24 +4,51 @@ class User
   end
 
   attr_accessor :name
+
+  def deplete_caffeine
+  end
+
+  def change_location
+  end
+end
+
+class School
+  def initialize(player)
+    @player = player
+    @rooms = []
+  end
+
+  attr_accessor :player
 end
 
 class Room
   def initialize()
+    @name = name
+    @description = description
+    @task = task
   end
+
+  attr_accessor :name, :description, :task
 end
 
 class Question
   def initialize(question, multiple_choice, correct)
     @question = question
-    @answer = ""
+    @user_answer = ""
     @multiple_choice = multiple_choice
     @correct = correct
   end
   attr_accessor :question, :multiple_choice, :correct
+
+  def test_answer
+    if @user_answer == @multiple_choice[@correct]
+      #user.advance_room
+    else
+      #user.deplete_health
+    end
+  end
 end
 
-
-question1 = Question.new("question", ["choice1","choice2"], 1)
-
-puts question1.multiple_choice[question1.correct]
+def user_dies()
+  #system('say "oh no you are deeeeeeead."')
+end
