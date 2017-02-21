@@ -1,5 +1,5 @@
 class Room
-  def initialize()
+  def initialize(name, description, next_location)
     @name = name
     @description = description
     @task = task
@@ -8,6 +8,9 @@ class Room
   end
 
   attr_accessor :name, :description, :task
+
   def display_task
+    puts "You need to do #{@task} before you can proceed..."
   end
+
 end
