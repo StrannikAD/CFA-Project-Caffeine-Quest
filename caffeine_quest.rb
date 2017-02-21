@@ -29,6 +29,11 @@ class Room
   end
 
   attr_accessor :name, :description, :task
+
+
+
+  def display_task
+  end
 end
 
 class Question
@@ -45,6 +50,13 @@ class Question
       #user.advance_room
     else
       #user.deplete_health
+    end
+  end
+
+  def display_question
+    puts @question
+    @multiple_choice.each do |choice|
+      puts choice
     end
   end
 end
