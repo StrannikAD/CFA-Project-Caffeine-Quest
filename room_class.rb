@@ -13,4 +13,8 @@ class Room
     puts "You need to do #{@task} before you can proceed..."
   end
 
+  def display_question ##needs a display_question method in question class to work
+    question.display_question
+  end
+
 end
