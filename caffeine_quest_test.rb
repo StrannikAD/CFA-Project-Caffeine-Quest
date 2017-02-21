@@ -1,5 +1,9 @@
 require 'test/unit'
 require_relative 'caffeine_quest'
+require_relative "school_class"
+require_relative "user_class"
+require_relative "room_class"
+require_relative "question_class"
 
 class QuestionTest < Test::Unit::TestCase
   def test_question_class
