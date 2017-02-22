@@ -1,20 +1,23 @@
 class Question
-  def initialize(question_text, multiple_choice, answer, hint)
-    @question_text = question_text
+  def initialize(text, multiple_choice, correct_answer)
+    @text = text
     @multiple_choice = multiple_choice
-    @answer = answer
-    @hint = hint
+    @correct_answer = correct_answer
+  end
+    attr_accessor :text, :multiple_choice, :correct_answer
+
+  def test_answer(user_answer) # School passes user_answer
+    if user_answer == @correct_answer
+      true
+    elsif user_answer != @correct_answer
+      # puts "Wrong!"
+      # puts "Oh no! Your caffiene levels have been depleted!"
+      false
+    end
   end
 
-  def hint
-    @hint
-  end
-
-  def multiple_choice
-    @multiple_choice
-  end
-
-  def test_answer(answer)
-    answer == @answer
+  def display_question
+    puts @text
+    puts @multiple_choice
   end
 end
