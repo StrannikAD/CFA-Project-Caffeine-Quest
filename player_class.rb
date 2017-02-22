@@ -28,7 +28,7 @@ class Player
   end
 
   def display_caffeine_level
-    puts "Your current caffeine level is #{caffeine}%"
+    puts "Your current caffeine level is #{@caffeine}%"
   end
 
   def user_dies

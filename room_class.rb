@@ -13,7 +13,7 @@ class Room
   # end
 
   def display_description
-    puts "You have entered #{name}. #{description}"
+    puts "You have entered #{@name}. #{@description}"
   end
 
 end
