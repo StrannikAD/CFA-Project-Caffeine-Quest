@@ -18,7 +18,11 @@ class School
     player_prompt
   end
 
+  # School's actions / stages of gameplay
   def start
+    puts @caffeine_quest_wordmark
+    puts @intro_text
+    puts @tutorial_text
   end
 
   def display_current_location
