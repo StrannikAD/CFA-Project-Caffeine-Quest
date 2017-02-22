@@ -6,7 +6,7 @@ class Room
     @next_location = next_location
   end
 
-  attr_accessor :name, :description, :task, :question
+  attr_accessor :name, :description, :task, :question, :next_location
 
   # def display_task
   #   puts "You need to do #{@task} before you can proceed..."
