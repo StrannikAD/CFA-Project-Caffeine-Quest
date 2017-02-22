@@ -1,20 +1,28 @@
-class User
-  def initialize(name, current_room, hints)
+class Player
+  def initialize(name, location)
     @name = name
-    @starting_room = current_room
-    @room = current_room
+    @location = location
+    @caffeine = 100
   end
 
-  def next_room(room)
-    if room == @room
-      false
-    end
-    @room = room
-    true
+  attr_accessor :name, :location, :caffeine
+
+  def change_location(location)
+    @location = location
   end
 
-  def restart
-    @room = starting_room
+  def restart(location)
+    @location = location
+  end
+
+  def deplete_caffeine
+    @caffeine -= 10
+    puts "Oh no! Your caffeine level has dropped by 10%!"
+    puts display_caffeine_level
+  end
+
+  def display_caffeine_level
+    puts "Your current caffeine level is #{caffeine}%"
   end
 
 end
