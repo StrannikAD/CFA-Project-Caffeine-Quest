@@ -5,6 +5,7 @@ class School
 
     @intro_text = "Welcome to Caffeine Quest!"
     @tutorial_text = "These are the commands you can enter: ..."
+    @invalid_input_text = "Command not found. Please try again."
     @success_text = "You were correct!"
     @failure_text = "You were wrong! Try again."
     @caffeine_quest_wordmark = %{
@@ -44,6 +45,8 @@ class School
         game_restart
       when "h"
         puts @tutorial_text
+      else
+        puts @invalid_input_text
       end
       break if input == "quit"
     end
@@ -61,7 +64,7 @@ class School
       puts @success_text
       @player.change_location(@player.location.next_location)
     end
-    puts @failure text
+    puts @failure_text
   end
 
   ## LOOK
@@ -76,7 +79,7 @@ class School
   # Game logic
   def game_restart
     start
-    @player.restart(@location[0])
+    @player.restart(@rooms[0])
     player_entered_room
   end
 end
