@@ -13,6 +13,7 @@ class Player
 
   def restart(location)
     @location = location
+    @caffeine = 100
   end
 
   def deplete_caffeine
