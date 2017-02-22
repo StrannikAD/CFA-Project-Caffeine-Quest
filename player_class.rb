@@ -24,7 +24,7 @@ class Player
       puts display_caffeine_level
     else
       @alive = false
-
+    end
   end
 
   def display_caffeine_level
