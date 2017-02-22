@@ -4,7 +4,19 @@ class School
     @rooms = rooms
 
     @intro_text = "Welcome to Caffeine Quest!"
-    @tutorial_text = "These are the commands you can enter: ..."
+    @tutorial_text = %{
+Caffeine Quest is a script adventure game - shoutout to the 90s, sans Y2K?
+
+You interact with the game by typing in commands. Fingerless-gloves. Activate!
+
+Commands are case-insensitive. You can enter:
+LOOK - Get information about current room.
+LEAVE - Answer question to leave current room and progress.
+H - View these tips again.
+RESTART - Low on Caffeine? Don't think you'll make it? Quit without quitting.
+QUIT - If you must :(
+GODMODE - Anything, but this...
+    }
     @invalid_input_text = "Command not found. Please try again."
     @success_text = "You were correct!"
     @failure_text = "You were wrong! Try again."
