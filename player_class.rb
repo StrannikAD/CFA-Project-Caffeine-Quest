@@ -3,6 +3,7 @@ class Player
     @name = name
     @location = location
     @caffeine = 100
+    @alive = true
   end
 
   attr_accessor :name, :location, :caffeine
@@ -17,13 +18,21 @@ class Player
   end
 
   def deplete_caffeine
-    @caffeine -= 10
-    puts "Oh no! Your caffeine level has dropped by 10%!"
-    puts display_caffeine_level
+    if @caffeine - 10 > 0
+      @caffeine -= 10
+      puts "Oh no! Your caffeine level has dropped by 10%!"
+      puts display_caffeine_level
+    else
+      @alive = false
+
   end
 
   def display_caffeine_level
     puts "Your current caffeine level is #{caffeine}%"
+  end
+
+  def user_dies
+    system('say "you are deeeeeeead"')
   end
 
 end
