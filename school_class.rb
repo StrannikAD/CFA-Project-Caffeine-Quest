@@ -25,7 +25,8 @@ class School
     puts @tutorial_text
   end
 
-  def display_current_location
+  def player_entered_room
+    @player.location.display_description
   end
 
   def prompt_user
