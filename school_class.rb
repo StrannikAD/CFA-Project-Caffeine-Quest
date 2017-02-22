@@ -29,8 +29,54 @@ class School
     @player.location.display_description
   end
 
-  def prompt_user
+  # Inifinite loop that runs till user enters 'quit'
+  def player_prompt
+    loop do
+      print "Input ('h' for help) >> "
+      input = gets.chomp.downcase
+
+      case input
+      when "leave"
+        player_command_leave
+      when "look"
+        player_command_look
+      when "restart"
+        game_restart
+      when "h"
+        puts @tutorial_text
+      end
+      break if input == "quit"
+    end
+    puts "Thank you for playing Caffeine Quest!\nMay you always have a hipster cafe to recover in wherever you go."
+    puts @caffeine_quest_wordmark
   end
 
-  attr_accessor :player
+  # Player commands
+  ## LEAVE
+  def player_command_leave
+    @player.location.question.display_question
+    print "Answer (enter A, B, C etc.) >> "
+    input = gets.chomp.downcase
+    if @player.location.question.test_answer(input)
+      puts @success_text
+      @player.change_location(@player.location.next_location)
+    end
+    puts @failure text
+  end
+
+  ## LOOK
+  def player_command_look
+    @player.location.display_description
+  end
+
+  ## ~ EXAMINE [item]
+
+  ## ~ Cheats / Easter eggs
+
+  # Game logic
+  def game_restart
+    start
+    @player.restart(@location[0])
+    player_entered_room
+  end
 end
