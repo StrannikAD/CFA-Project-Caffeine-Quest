@@ -106,7 +106,7 @@ GODMODE - Anything, but this...
       end
       puts ""
       @player.display_caffeine_level
-      print "Input ('h' for help) #{@blinkprompt} "
+      print "Input ('h' for help) #{@blink_prompt} "
       input = gets.chomp.downcase
       puts ""
 
@@ -135,7 +135,7 @@ GODMODE - Anything, but this...
   ## LEAVE
   def player_command_leave
     @player.location.question.display_question
-    print "Answer (enter A, B, C etc.) #{@blinkprompt} "
+    print "Answer (enter A, B, C etc.) #{@blink_prompt} "
     input = gets.chomp.downcase
     puts ""
     if @player.location == @rooms[-1]
@@ -169,7 +169,7 @@ GODMODE - Anything, but this...
     if prompt == :prompt
       while true
         puts ""
-        print "Restart [y/n]? #{@blinkprompt} "
+        print "Restart [y/n]? #{@blink_prompt} "
         input = gets.chomp.downcase
         puts ""
 
