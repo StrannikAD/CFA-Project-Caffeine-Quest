@@ -13,7 +13,8 @@ class Room
   # end
 
   def display_description
-    puts "You have entered #{@name}. #{@description}"
+    puts Paint["You are in the #{@name}.", :cyan]
+    puts Paint["#{@description}", "light green"]
   end
 
 end
