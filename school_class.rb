@@ -73,10 +73,8 @@ GODMODE - Anything, but this...
 |_______________________________________________________________________________________________|
             }, "gold"]
     @blink_prompt = Paint[">> ", :blink]
-    start
-    player_prompt
   end
-
+  attr_accessor :player, :rooms, :blink_prompt
   # School's actions / stages of gameplay
   def start
     puts @caffeine_quest_wordmark
@@ -84,6 +82,10 @@ GODMODE - Anything, but this...
     puts @tutorial_text
     @player.alive = true
     player_entered_room
+  end
+
+  def rick_roll
+    system('say "never gonna give you up, never gonna let you down, never gonna turn around and hurt you"')
   end
 
   def player_entered_room
@@ -95,6 +97,7 @@ GODMODE - Anything, but this...
     while true
       if !@player.alive
         puts @defeat_text
+        @player.user_dies
         if !game_restart(:prompt)
           break
         end
@@ -123,6 +126,8 @@ GODMODE - Anything, but this...
         puts @tutorial_text
       when "quit"
         break
+      when "godmode"
+        rick_roll
       else
         puts @invalid_input_text
       end

@@ -7,4 +7,9 @@ class RoomTest < Test::Unit::TestCase
     room = Room.new("name", "description", "question", "next_location")
     assert_equal "name", room.name
   end
+
+  def test_description_returns_a_string
+    room = Room.new("name", "description", "question", "next_location")
+    assert_equal String, room.description.class
+  end
 end
