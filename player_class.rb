@@ -4,6 +4,7 @@ class Player
     @location = location
     @caffeine = 100
     @alive = true
+    @caffeine_deplete_by = 20
   end
 
   attr_accessor :name, :location, :caffeine, :alive
@@ -18,9 +19,9 @@ class Player
   end
 
   def deplete_caffeine
-    if @caffeine - 25 > 0
-      @caffeine -= 25
-      puts "Oh no! Your caffeine level has dropped by 10%!"
+    if @caffeine - @caffeine_deplete_by > 0
+      @caffeine -= @caffeine_deplete_by
+      puts "Oh no! Your caffeine level has dropped by #{@caffeine_deplete_by}%!"
       puts display_caffeine_level
     else
       @alive = false
