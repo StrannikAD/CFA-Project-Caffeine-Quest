@@ -99,6 +99,11 @@ GODMODE - Anything, but this...
           break
         end
       end
+      if @player.location == @rooms[-1]
+        if !player_command_leave
+          break
+        end
+      end
       puts ""
       @player.display_caffeine_level
       print "Input ('h' for help) >> "
@@ -178,8 +183,8 @@ GODMODE - Anything, but this...
         end
       end
     end
-    start
     @player.restart(@rooms[0])
+    start
     true
   end
 end

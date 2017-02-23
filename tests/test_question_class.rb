@@ -8,4 +8,11 @@ class QuestionTest < Test::Unit::TestCase
     expected = "question text"
     assert_equal(expected, actual)
   end
+
+  def test_question_class2
+    question = Question.new([], [], "a")
+    actual = question.correct_answer
+    expected = "a"
+    assert_equal(expected, actual)
+  end
 end
