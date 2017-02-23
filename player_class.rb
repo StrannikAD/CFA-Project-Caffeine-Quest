@@ -18,8 +18,8 @@ class Player
   end
 
   def deplete_caffeine
-    if @caffeine - 10 > 0
-      @caffeine -= 10
+    if @caffeine - 25 > 0
+      @caffeine -= 25
       puts "Oh no! Your caffeine level has dropped by 10%!"
       puts display_caffeine_level
     else

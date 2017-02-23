@@ -30,7 +30,7 @@ question5 = Question.new("The name for the way that computers manipulate data in
   ["a) programming",
     "b) processing",
     "c) storing",
-    "d) organising"], "a")
+    "d) organising"], "b")
 
 question6 = Question.new("Ruby is an ____ interpreted scripting language.",
   ["a) object-oriented",
