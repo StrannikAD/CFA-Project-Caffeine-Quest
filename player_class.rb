@@ -32,7 +32,7 @@ class Player
   end
 
   def user_dies
-    system('say "you are deeeeeeead"')
+    system('say "oh no"')
   end
 
 end
