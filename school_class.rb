@@ -44,7 +44,7 @@ GODMODE - Anything, but this...
 |                                                                                              |
 |               REWARDS:                                                                       |
 |               You are now eligible for a Caffeine Quest(TM) sticker!                         |
-|               -Lodge inquiries with Jamie.                                                   |
+|               -Lodge inquiries with CFA.                                                   |
 |______________________________________________________________________________________________|
     }, "cyan"]
 
