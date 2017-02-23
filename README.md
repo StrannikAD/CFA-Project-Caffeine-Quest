@@ -14,7 +14,7 @@
 Caffeine Quest uses the Print gem to colour terminal text. To install the Print
 gem type the following into your command line:
 
-```bash
+```
 gem install print
 ```
 
@@ -23,6 +23,6 @@ gem install print
 Once you've installed the gem dependencies, enter the following into your
 command line:
 
-```bash
+```
 ruby caffeine_quest.rb
 ```
