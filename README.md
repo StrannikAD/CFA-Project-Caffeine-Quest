@@ -30,17 +30,17 @@ Input ('h' for help) >>
 ```
 ##### User Commands (as of writing README)
 
-LOOK - Get information about current room.
+* LOOK - Get information about current room.
 
-LEAVE - Answer question to leave current room and progress.
+* LEAVE - Answer question to leave current room and progress.
 
-H - View these tips again.
+* H - View these tips again.
 
-RESTART - Another one. -DJ Khaled
+* RESTART - Another one. -DJ Khaled
 
-QUIT - If you must :(
+* QUIT - If you must :(
 
-GODMODE - Anything, but this...
+* GODMODE - Anything, but this...
 
 ### Design Process
 
