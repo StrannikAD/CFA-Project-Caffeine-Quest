@@ -5,28 +5,36 @@ require_relative "question_class"
 require "paint"
 # require "catpix"
 
-question1 = Question.new("Ruby on Rails is a ____",
+question1 = Question.new("A student is standing by the door.
+\"Before you leave you must answer this question!\" they demand.\n
+Ruby on Rails is a ____",
   ["a. web framework",
     "b. programming environment",
     "c. programming language",
     "d. all of the above"], "a")
 
-question2 = Question.new("What does the following expression evaluate to?: 2 ** 4",
+question2 = Question.new("A ghostly figure beckons to you.
+\"Riddle me this or you shall not pass!\"\n
+What does the following expression evaluate to?: 2 ** 4",
   ["a. 8", "b. 12", "c. 16", "d. 14"], "c")
 
-question3 = Question.new("Which one of the following ruby code create the string \"Hello Ruby\"?",
+question3 = Question.new("A child has vomitted and to avoid cleaning duties, you must answer this:\n
+Which one of the following ruby code create the string \"Hello Ruby\"?",
   ["a. %{Hello Ruby%",
     "b. @Hello Ruby",
     "c. %(Hello Ruby)",
     "d. %Hello Ruby!"], "c")
 
-question4 = Question.new("An object contains which of the following?",
+question4 = Question.new("To avoid drowing in paper, answer this question:\n
+An object contains which of the following?",
   ["a) data and methods",
     "b) methods and conditionals",
     "c) conditionals and frameworks",
     "d) frameworks and data"], "a")
 
-question5 = Question.new("The name for the way that computers manipulate data into information is called:",
+question5 = Question.new("In order to avoid coming face to face with Mouzilla
+answer this question:\n
+The name for the way that computers manipulate data into information is called:",
   ["a) programming",
     "b) processing",
     "c) storing",
@@ -47,7 +55,7 @@ cafe_question = Question.new("Welcome to Cafe Hipst! You look exhausted, can I g
 
 
 #rooms need to be made backwards so they can feed into the next_location of their previous room
-cafe = Room.new("Cafe", "You did it!!\n\nYou will now receive a year's supply of take away coffee! j/k Reaching caffeine enlightenment is a reward in itself\n\nMay Java be with you!", cafe_question, nil)
+cafe = Room.new("Cafe", "You did it!!\n\nYou will now receive a year's supply of take away coffee!\nj/k Reaching caffeine enlightenment is a reward in itself\n\nMay Java be with you!", cafe_question, nil)
 stairwell = Room.new("Stairwell", "The stairwell lights are eerily flickering on and off and was that a mouse \nthat just ran across your foot?\n\nBut the end is in sight, caffeine awaits beyond this door!", question5, cafe)
 printerroom = Room.new("Printer Room", "Disaster!\n\nThe printer has malfunctioned and is printing out pages at random.\n\nEscape!", question4, stairwell)
 kitchen = Room.new("Kitchen", "The kitchen is full to the brim with Year 9 students and there is no caffeine in sight.\n\nBeat a hasty retreat!", question3, printerroom)
