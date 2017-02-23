@@ -140,6 +140,7 @@ GODMODE - Anything, but this...
   # Player commands
   ## LEAVE
   def player_command_leave
+    @player.location.display_npc_text
     @player.location.question.display_question
     print "Answer (enter A, B, C etc.) #{@blink_prompt} "
     input = gets.chomp.downcase
