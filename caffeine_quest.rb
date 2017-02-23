@@ -58,3 +58,6 @@ classroom = Room.new("Classroom", "You have been working on your project for hou
 player = Player.new("Player One", classroom)
 
 school = School.new(player, [classroom, makerspace, kitchen, printerroom, stairwell, cafe])
+
+school.start
+school.player_prompt
