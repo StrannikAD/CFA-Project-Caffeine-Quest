@@ -112,6 +112,7 @@ GODMODE - Anything, but this...
       print "Input ('h' for help) #{@blink_prompt} "
       input = gets.chomp.downcase
       puts ""
+      system "clear"
 
       case input
       when "leave"
