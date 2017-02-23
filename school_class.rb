@@ -3,8 +3,8 @@ class School
     @player = player
     @rooms = rooms
 
-    @intro_text = "Welcome to Caffeine Quest(TM)!"
-    @tutorial_text = %{
+    @intro_text = Paint["Welcome to Caffeine Quest(TM)!", "purple"]
+    @tutorial_text = Paint[%{
 Caffeine Quest(TM) is a script adventure game - shoutout to the 90s, sans Y2K?
 
 You interact with the game by typing in commands. Fingerless-gloves. Activate!
@@ -25,18 +25,18 @@ GODMODE - Anything, but this...
 |              Answer their riddles to get to the cafe that only does handle bars latte art.   |
 |              Wrong answers decaffeinate you! Do not get TOTALLY DECAFFEINATED !! ?? !        |
 |______________________________________________________________________________________________|
- }
-    @invalid_input_text = "Command not found. Please try again."
-    @success_text = "You were CORRECT!"
-    @failure_text = "You were WRONG! Try again."
-    @defeat_text = %{
+ }, "cyan"]
+    @invalid_input_text = Paint["Command not found. Please try again.", "purple"]
+    @success_text = Paint["You were CORRECT!", "purple"]
+    @failure_text = Paint["You were WRONG! Try again.", "purple"]
+    @defeat_text = Paint[%{
  ______________________________________________________________________________________________
 |                                                                                              |
 |               You did your best but it wasn't good enough.                                   |
 |               You've deen TOTALLY DECAFFEINATED! Try again to redeem yourself.               |
 |______________________________________________________________________________________________|
-    }
-    @victory_text = %{
+    }, "cyan"]
+    @victory_text = Paint[%{
  ______________________________________________________________________________________________
 |                                                                                              |
 |               Nice job! You WON!                                                             |
@@ -46,9 +46,9 @@ GODMODE - Anything, but this...
 |               You are now eligible for a Caffeine Quest(TM) sticker!                         |
 |               -Lodge inquiries with Jamie.                                                   |
 |______________________________________________________________________________________________|
-    }
+    }, "cyan"]
 
-    @game_end_text = %{
+    @game_end_text = Paint[%{
   _____________________________________________________________________________________________
 |                                                                                              |
 |               Thank you for playing Caffeine Quest(TM)!                                      |
@@ -62,8 +62,8 @@ GODMODE - Anything, but this...
 |               https://github.com/advaitju/CFA-Project-Caffeine-Quest                         |
 |               \u2726 Follow + Star + Watch us on Github \u2726                                         |
 |______________________________________________________________________________________________|
-    }
-    @caffeine_quest_wordmark = %{
+    }, "cyan"]
+    @caffeine_quest_wordmark = Paint[%{
  _______________________________________________________________________________________________
 |                 ______      ________     _               ____                  __             |
 |      ________  / ____/___ _/ __/ __/__  (_)___  ___     / __ \\__  _____  _____/ /_            |
@@ -71,8 +71,8 @@ GODMODE - Anything, but this...
 |     _______  / /___/ /_/ / __/ __/  __/ / / / /  __/  / /_/ / /_/ /  __(__  ) /_              |
 |              \\____/\\__,_/_/ /_/  \\___/_/_/ /_/\\___/   \\___\\_\\__,_/\\___/____/\\__/              |
 |_______________________________________________________________________________________________|
-            }
-    @blinkprompt = Paint[">>", :blink]
+            }, "gold"]
+    @blink_prompt = Paint[">> ", :blink]
     start
     player_prompt
   end
