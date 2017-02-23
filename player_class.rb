@@ -6,7 +6,7 @@ class Player
     @alive = true
   end
 
-  attr_accessor :name, :location, :caffeine
+  attr_accessor :name, :location, :caffeine, :alive
 
   def change_location(location)
     @location = location
