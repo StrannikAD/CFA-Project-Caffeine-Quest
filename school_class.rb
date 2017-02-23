@@ -3,8 +3,9 @@ class School
     @player = player
     @rooms = rooms
 
-    @intro_text = "Welcome to Caffeine Quest!\n\n"
-    @tutorial_text = %{Caffeine Quest is a script adventure game - shoutout to the 90s, sans Y2K?
+    @intro_text = "Welcome to Caffeine Quest(TM)!"
+    @tutorial_text = %{
+Caffeine Quest(TM) is a script adventure game - shoutout to the 90s, sans Y2K?
 
 You interact with the game by typing in commands. Fingerless-gloves. Activate!
 
@@ -24,7 +25,7 @@ GODMODE - Anything, but this...
 |              Answer their riddles to get to the cafe that only does handle bars latte art.   |
 |              Wrong answers decaffeinate you! Do not get TOTALLY DECAFFEINATED !! ?? !        |
 |______________________________________________________________________________________________|
-}
+ }
     @invalid_input_text = "Command not found. Please try again."
     @success_text = "You were CORRECT!"
     @failure_text = "You were WRONG! Try again."
@@ -50,7 +51,7 @@ GODMODE - Anything, but this...
     @game_end_text = %{
   _____________________________________________________________________________________________
 |                                                                                              |
-|               Thank you for playing Caffeine Quest!                                          |
+|               Thank you for playing Caffeine Quest(TM)!                                      |
 |               May you always have a hipster cafe to recover in wherever you go.              |
 |                                                                                              |
 |               This game brought to you by the following legends:                             |
@@ -59,7 +60,7 @@ GODMODE - Anything, but this...
 |               advaitju                                                                       |
 |                                                                                              |
 |               https://github.com/advaitju/CFA-Project-Caffeine-Quest                         |
-|               \u2726 Follow + Star + Watch us on Github \u2726                                          |
+|               \u2726 Follow + Star + Watch us on Github \u2726                                         |
 |______________________________________________________________________________________________|
     }
     @caffeine_quest_wordmark = %{
@@ -81,6 +82,8 @@ GODMODE - Anything, but this...
     puts @caffeine_quest_wordmark
     puts @intro_text
     puts @tutorial_text
+    @player.alive = true
+    player_entered_room
   end
 
   def player_entered_room
@@ -90,20 +93,23 @@ GODMODE - Anything, but this...
   # Inifinite loop that runs till user enters 'quit'
   def player_prompt
     while true
-      if false
+      if !@player.alive
         puts @defeat_text
         if !game_restart(:prompt)
           break
         end
       end
       puts ""
+      @player.display_caffeine_level
       print "Input ('h' for help) >> "
       input = gets.chomp.downcase
       puts ""
 
       case input
       when "leave"
-        player_command_leave
+        if !player_command_leave
+          break
+        end
       when "look"
         player_command_look
       when "restart"
@@ -127,19 +133,21 @@ GODMODE - Anything, but this...
     print "Answer (enter A, B, C etc.) >> "
     input = gets.chomp.downcase
     puts ""
-    if @player.location.question.test_answer(input)
-      if @player.location == @rooms[-1]
-        puts @victory_text
-        game_restart(:prompt)
-      end
-      puts @success_text
-      @player.change_location(@player.location.next_location)
-      puts ""
-      player_entered_room
+    if @player.location == @rooms[-1]
+      puts @victory_text
+      return game_restart(:prompt)
     else
-      @player.deplete_caffeine
-      puts @failure_text
+      if @player.location.question.test_answer(input)
+        puts @success_text
+        @player.change_location(@player.location.next_location)
+        puts ""
+        player_entered_room
+      else
+        @player.deplete_caffeine
+        puts @failure_text
+      end
     end
+    return true
   end
 
   ## LOOK
@@ -154,22 +162,24 @@ GODMODE - Anything, but this...
   # Game logic
   def game_restart(prompt)
     if prompt == :prompt
-      puts ""
-      print "Restart [y/n]? >> "
-      input = gets.chomp.downcase
-      puts ""
+      while true
+        puts ""
+        print "Restart [y/n]? >> "
+        input = gets.chomp.downcase
+        puts ""
 
-      case input
-      when 'y' || 'yes'
-        game_restart
-      when 'n' || 'no'
-        return
-      else
-        @invalid_input_text
+        case input
+        when 'y' || 'yes'
+          break
+        when 'n' || 'no'
+          return false
+        else
+          @invalid_input_text
+        end
       end
     end
     start
     @player.restart(@rooms[0])
-    player_entered_room
+    true
   end
 end
