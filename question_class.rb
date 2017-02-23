@@ -17,7 +17,9 @@ class Question
   end
 
   def display_question
-    puts @text
-    puts @multiple_choice
+    puts Paint[@text, :cyan]
+    @multiple_choice.each do |i|
+      puts Paint[i, "light green"]
+    end
   end
 end
