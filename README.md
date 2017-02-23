@@ -26,3 +26,9 @@ command line:
 ```
 ruby caffeine_quest.rb
 ```
+
+The game will prompt you to enter input with the following:
+
+```
+Input ('h' for help) >>
+```
