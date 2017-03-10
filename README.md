@@ -1,6 +1,7 @@
 # Caffeine Quest
 
 ## A Coder Factory Academy challenge project
+![Screenshot of Caffeine Quest.](img/screenshot-caffeine-quest.png)
 ### About
 Caffeine Quest is a sassy script adventure game that models the game world in OOP. MVP (donut without sprinkles) version takes the player through a linear narrative mode where they must answer a series of CS / programming questions to progress.
 
