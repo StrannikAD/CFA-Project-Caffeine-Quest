@@ -22,7 +22,6 @@ class Player
     if @caffeine - @caffeine_deplete_by > 0
       @caffeine -= @caffeine_deplete_by
       puts "Oh no! Your caffeine level has dropped by #{@caffeine_deplete_by}%!"
-      puts display_caffeine_level
     else
       @alive = false
     end

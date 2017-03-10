@@ -13,7 +13,7 @@ class PlayerTest < Test::Unit::TestCase
   def test_caffeine_level_depletes
     player = Player.new("Player 1", "room 1")
     player.deplete_caffeine
-    assert_equal 75, player.caffeine
+    assert_equal 80, player.caffeine
   end
 
 end
